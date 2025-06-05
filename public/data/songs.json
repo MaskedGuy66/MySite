@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Luna say maybe",
+    "artist": "Luna",
+    "play_count": 320,
+    "image": "../images/users/DuyP/songs/Luna_say_maybe.jpg",
+    "link": "https://youtu.be/Sq5Dj0U06vQ"
+  },
+  {
+    "id": 2,
+    "title": "Perfect Game",
+    "artist": "Shinosawa Hiro",
+    "play_count": 280,
+    "image": "../images/users/DuyP/songs/Perfect_Game.png",
+    "link": "https://youtu.be/fbM4-nwB1xY"
+  },
+  {
+    "id": 3,
+    "title": "SOS",
+    "artist": "Tsukimura Temari",
+    "play_count": 210,
+    "image": "../images/users/DuyP/songs/SOS.png",
+    "link": "https://youtu.be/EvuXIk2Bh78"
+  },
+  {
+    "id": 4,
+    "title": "Happy Millefeuille",
+    "artist": "Subaru",
+    "play_count": 170,
+    "image": "../images/users/DuyP/songs/Happy_Millefeuille.jpg",
+    "link": "https://youtu.be/AON5aAVG3QU"
+  },
+  {
+    "id": 5,
+    "title": "Monitering",
+    "artist": "Hiro",
+    "play_count": 150,
+    "image": "../images/users/DuyP/songs/Monitering.jpg",
+    "link": "https://youtu.be/kbNdx0yqbZE"
+  },
+  {
+    "id": 6,
+    "title": "AiScream",
+    "artist": "Temari",
+    "play_count": 130,
+    "image": "../images/users/DuyP/songs/AiScream.jpg",
+    "link": "https://youtu.be/L1mFVp9IM9c"
+  }
+]

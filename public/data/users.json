@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "YuukiP",
+    "profession": "Producer",
+    "address": "Mars",
+    "phone": "084*****52",
+    "email": "nduy0021@gmail.com",
+    "avatar": "../images/users/DuyP/avatars/DuyP.jpg",
+    "qr": "../images/users/DuyP/QR/QR.jpg",
+    "profileImage": "../images/users/DuyP/profile/profile-image.jpg",
+    "reportImage": "../images/users/DuyP/chart/chart.jpg",
+    "youtube_video": "https://www.youtube.com/embed/iYPyC_ldkg8",
+    "favoriteSongs": [
+      1,
+      3,
+      5,
+      2,
+      4,
+      6
+    ],
+    "favoriteIdols": [
+      1,
+      2,
+      3
+    ]
+  }
+]

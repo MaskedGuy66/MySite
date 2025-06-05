@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upload User Data</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Thêm Người Dùng Mới</h1>
+
+    <form
+      id="userForm"
+      action="/upload"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <label for="name">Tên:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="profession">Nghề nghiệp:</label>
+      <input type="text" id="profession" name="profession" required />
+
+      <label for="address">Địa chỉ:</label>
+      <input type="text" id="address" name="address" required />
+
+      <label for="phone">Số điện thoại:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="avatar">Ảnh đại diện (avatar):</label>
+      <input type="file" id="avatar" name="avatar" accept="image/*" required />
+
+      <label for="profileImage">Ảnh profile:</label>
+      <input
+        type="file"
+        id="profileImage"
+        name="profileImage"
+        accept="image/*"
+        required
+      />
+
+      <label for="qr">Ảnh QR:</label>
+      <input type="file" id="qr" name="qr" accept="image/*" required />
+
+      <label for="youtube_video">Link YouTube video (embed url):</label>
+      <input
+        type="url"
+        id="youtube_video"
+        name="youtube_video"
+        placeholder="https://www.youtube.com/embed/..."
+      />
+
+      <label>Idol yêu thích (chọn tối đa 3):</label>
+      <div id="idolCheckboxes" class="checkbox-group"></div>
+ <label>Bài hát yêu thích (tối đa 6):</label>
+      <div id="songInputs"></div>
+      <button type="button" id="addSongBtn">+ Thêm bài hát</button>
+      <br>
+      <button type="submit">Lưu Người Dùng</button>
+    </form>
+    <script src="../js/upload.js"></script>
+  </body>
+</html>

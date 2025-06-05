@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Hanami Saki",
+    "sense": true,
+    "logic": false,
+    "anomaly": false,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Hanami_Saki.png"
+  },
+  {
+    "id": 2,
+    "name": "Tsukimura Temari",
+    "sense": false,
+    "logic": true,
+    "anomaly": false,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Tsukimura_Temari.png"
+  },
+  {
+    "id": 3,
+    "name": "Fujita Kotone",
+    "sense": true,
+    "logic": false,
+    "anomaly": false,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Fujita_Kotone.png"
+  },
+  {
+    "id": 4,
+    "name": "Shinosawa Hiro",
+    "sense": false,
+    "logic": false,
+    "anomaly": true,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Shinosawa_Hiro.png"
+  },
+  {
+    "id": 5,
+    "name": "Kuramoto China",
+    "sense": false,
+    "logic": true,
+    "anomaly": false,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Kuramoto_China.png"
+  },
+  {
+    "id": 6,
+    "name": "Hanami Ume",
+    "sense": false,
+    "logic": false,
+    "anomaly": true,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Hanami_Ume.png"
+  },
+  {
+    "id": 7,
+    "name": "Arimura Mao",
+    "sense": true,
+    "logic": false,
+    "anomaly": false,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Arimura_Mao.png"
+  },
+  {
+    "id": 8,
+    "name": "Himesaki Rinami",
+    "sense": false,
+    "logic": true,
+    "anomaly": false,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Himesaki_Rinami.png"
+  },
+  {
+    "id": 9,
+    "name": "Katsuragi Lilja",
+    "sense": false,
+    "logic": false,
+    "anomaly": true,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Katsuragi_Lilja.png"
+  },
+  {
+    "id": 10,
+    "name": "Shiun Sumika",
+    "sense": false,
+    "logic": true,
+    "anomaly": false,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Shiun_Sumika.png"
+  },
+  {
+    "id": 11,
+    "name": "Juou Sena",
+    "sense": true,
+    "logic": false,
+    "anomaly": false,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Juou_Sena.png"
+  },
+  {
+    "id": 12,
+    "name": "Hataya Misuzu",
+    "sense": false,
+    "logic": false,
+    "anomaly": true,
+    "trainCount": 0,
+    "fans": 0,
+    "trueEnd": false,
+    "image": "../images/idols/arts/Hataya_Misuzu.png"
+  }
+]
