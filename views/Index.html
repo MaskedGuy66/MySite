@@ -1,12 +1,139 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0;url=profile.ejs" />
-  <title>Redirecting...</title>
-</head>
-<body>
-  <p>If you are not redirected automatically, <a href="profile.ejs">click here</a>.</p>
-</body>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thông tin cá nhân</title>
+    <link rel="stylesheet" href="/css/mysitecss.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="bg-image"></div>
+
+    <h1 class="section-title">MY PAGE</h1>
+
+    <div class="personal-info-wrapper">
+      <div class="personal-info-large-box">
+        <h2 class="center-text" style="font-size: 3vw">PERSONAL INFORMATION</h2>
+
+        <div class="inner-small-box">
+          <h3>MY REPORT</h3>
+          <div class="smaller-zone">
+            <img
+              src="<%= user.reportImage %>"
+              alt="my report"
+              class="chart-image"
+            />
+          </div>
+
+          <h3>MY PROFILE</h3>
+          <div class="smaller-zone">
+            <img
+              id="profile-image"
+              alt="my profile"
+              class="profile-image"
+              src="<%= user.profileImage %>"
+            />
+          </div>
+
+          <h3>MY FAVORITE</h3>
+          <h4><i class="fa fa-star"></i> Favorite Idol</h4>
+          <div class="smaller-zone">
+            <div class="podium" id="idol-podium">
+              <% idolList.forEach(function(idol, index) { %>
+              <div
+                class="rank <%= ['first', 'second', 'third'][index] || '' %>"
+              >
+                <img src="<%= idol.image %>" alt="Hạng <%= index + 1 %>" />
+                <div class="label"><%= idol.name %></div>
+              </div>
+              <% }) %>
+            </div>
+          </div>
+
+          <h4><i class="fa fa-music"></i> Favorite Song</h4>
+          <div class="smaller-zone smaller-zone-2" id="song-list">
+            <% songList.forEach(function(song) { %>
+            <a class="item" href="<%= song.link %>" target="_blank">
+              <img src="<%= song.image %>" alt="<%= song.title %>" />
+              <div class="play-button">▶</div>
+            </a>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+
+      <div class="small-box-column">
+        <div class="personal-info-small-box">
+          <div class="avatar-box">
+            <img id="user-avatar" alt="Ảnh đại diện" src="<%= user.avatar %>" />
+          </div>
+
+          <div class="info-box">
+            <div class="info-group">
+              <div class="ho-ten info-item"><b><%= user.name %></b></div>
+              <div class="nghe-nghiep info-item"><%= user.profession %></div>
+            </div>
+
+            <div class="group-title" style="text-align: right">QR Gakumasu</div>
+            <div class="QR-box">
+              <img id="qr-code" alt="Mã QR Gakumasu" src="<%= user.qr %>" />
+            </div>
+
+            <div class="contact-group">
+              <div class="group-title" style="text-align: right">
+                Contact
+              </div>
+              <div class="info-item">
+                <p>
+                  <i class="fa fa-phone"></i
+                  ><span class="phone-text"><%= user.phone %></span>
+                </p>
+              </div>
+              <div class="info-item">
+                <p>
+                  <i class="fa fa-envelope"></i
+                  ><span class="email-text"><%= user.email %></span>
+                </p>
+              </div>
+              <div class="info-item">
+                <p>
+                  <i class="fa fa-house"></i
+                  ><span class="address-text"><%= user.address %></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="personal-info-small-box">
+          <div class="video-container" id="youtube-container">
+            <% if (user.youtube_video) { %>
+            <iframe
+              width="360"
+              height="640"
+              src="<%= user.youtube_video %>"
+              title="YouTube video player"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+            <% } %>
+          </div>
+        </div>
+        <br />
+        <div class="personal-info-small-box chat-box">
+          <div class="chat-messages" id="chatMessages"></div>
+          <input
+            type="text"
+            id="chatInput"
+            placeholder="Nhập gì đó và nhấn Enter..."
+            class="chat-input"
+          />
+        </div>
+        <script src="/js/comment.js"></script>
+      </div>
+    </div>
+  </body>
 </html>

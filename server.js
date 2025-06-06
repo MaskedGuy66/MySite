@@ -4,6 +4,7 @@ const path = require("path");
 const fs = require("fs").promises;
 const fsSync = require("fs");
 const multer = require("multer");
+const app = express();
 const commentsFile = path.join(
   __dirname,
   "public",
@@ -12,7 +13,6 @@ const commentsFile = path.join(
   "comments.json"
 );
 
-const app = express();
 const PORT = 3000;
 
 // Middleware cần thiết để đọc dữ liệu từ form
@@ -31,42 +31,43 @@ app.get("/upload", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "upload.html"));
 });
 
-// Trang profile
+// Cấu hình EJS
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
 app.get("/profile", async (req, res) => {
   try {
-    const usersData = await fs.readFile(
-      path.join(__dirname, "public", "data", "users.json"),
-      "utf-8"
-    );
-    const idolsData = await fs.readFile(
-      path.join(__dirname, "public", "data", "idols.json"),
-      "utf-8"
-    );
-    const songsData = await fs.readFile(
-      path.join(__dirname, "public", "data", "songs.json"),
-      "utf-8"
-    );
+    const [usersData, idolsData, songsData] = await Promise.all([
+      fs.readFile(path.join(__dirname, "public", "data", "users.json"), "utf-8"),
+      fs.readFile(path.join(__dirname, "public", "data", "idols.json"), "utf-8"),
+      fs.readFile(path.join(__dirname, "public", "data", "songs.json"), "utf-8")
+    ]);
+
     const users = JSON.parse(usersData);
     const idols = JSON.parse(idolsData);
     const songs = JSON.parse(songsData);
 
     const userId = 1;
     const user = users.find((u) => u.id === userId);
+    if (!user) return res.status(404).send("Không tìm thấy người dùng");
 
+    // Danh sách yêu thích (có thể thay bằng lấy từ user nếu lưu sẵn)
     const userFavoriteIdols = { 1: [2, 5, 6] };
     const userFavoriteSongs = { 1: [1, 2, 3, 4, 5, 6] };
 
-    const idolList = userFavoriteIdols[userId].map((idolId) =>
-      idols.find((i) => i.id === idolId)
-    );
-    const songList = userFavoriteSongs[userId].map((songId) =>
-      songs.find((s) => s.id === songId)
-    );
+    const idolList = userFavoriteIdols[userId]
+      .map((idolId) => idols.find((i) => i.id === idolId))
+      .filter(Boolean);
 
-    res.render("profile", { user, idolList, songList });
+    const songList = userFavoriteSongs[userId]
+      .map((songId) => songs.find((s) => s.id === songId))
+      .filter(Boolean);
+
+    // Render trang profile bằng file index.ejs
+    res.render("index", { user, idolList, songList });
   } catch (error) {
-    console.error(error);
-    res.status(500).send("Lỗi server");
+    console.error("Lỗi khi tải dữ liệu:", error);
+    res.status(500).send("Lỗi máy chủ");
   }
 });
 
